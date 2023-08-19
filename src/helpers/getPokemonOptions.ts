@@ -1,11 +1,7 @@
 import pokemonApi from '@/api/PokemonApi';
 import type { AxiosResponse } from 'axios';
 import type { Pokemon } from '@/interfaces/Pokemon.interface';
-
-interface ListPokemonOptions {
-    id: number;
-    name: string;
-}
+import type { ListPokemonOptions } from '@/interfaces/ListPokemonOptions'
 
 const getPokemons = (): number[] => {
     const pokemonsArr: number[] = Array.from(Array(650))
@@ -17,7 +13,6 @@ const getPokemonOptions = async(): Promise<ListPokemonOptions[]> => {
 
     const pokemons: ListPokemonOptions[] = await getPokemonNames(mixedPokemons.splice(0, 4))
     return pokemons
-
 }
 
 const getPokemonNames = async([a,b, c, d]: number[] = []):  Promise<ListPokemonOptions[]> => {
