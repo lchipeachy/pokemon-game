@@ -6,6 +6,11 @@ import type { ListPokemonOptions } from '@/interfaces/ListPokemonOptions';
                 type: Array<ListPokemonOptions>,
                     required: true,
             }
+        }, 
+        methods: {
+            hola() {
+                // this.$emit()
+            }
         }
     }
 </script>
@@ -13,7 +18,10 @@ import type { ListPokemonOptions } from '@/interfaces/ListPokemonOptions';
 <template>
     <div class="options-container">
         <ul>
-            <li v-for="pokemon in pokemons" :key="pokemon.id">
+            <li v-for="pokemon in pokemons" 
+                :key="pokemon.id"
+                @click="$emit('selection', pokemon.id)"    
+            >
                 {{ pokemon.name }}
             </li>
         </ul>
