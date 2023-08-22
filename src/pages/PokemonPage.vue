@@ -63,7 +63,7 @@
         
         <template v-if="showAnswer">
             <h2 class="fade-in">{{ message }}</h2>
-            <button @click="newGame">
+            <button class="custom-button" @click="newGame">
                 Nuevo Juego
             </button>
         </template>
@@ -71,5 +71,18 @@
 </template>
 
 <style>
+.custom-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
 
+.custom-button:hover {
+    background-color: #2980b9;
+}
 </style>
